@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X3WEPCBH4Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X3WEPCBH4Y');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5347179312151361" crossorigin="anonymous"></script>
+<meta name='impact-site-verification' value='719e354c-4d62-4523-96b1-1c4b77780635'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On The Record — NBAGameStat</title>
+<meta name="description" content="Guess who said the most unhinged thing in NBA history. A daily quote game from NBAGameStat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #FF5C00;
+    --orange-dark: #CC4900;
+    --orange-light: #FF8040;
+    --court: #1A1A2E;
+    --court-mid: #16213E;
+    --court-light: #0F3460;
+    --white: #FFFFFF;
+    --muted: #9A9AAF;
+    --green: #22C55E;
+    --red: #EF4444;
+    --card-bg: #1E1E35;
+    --card-border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--court); color: var(--white); font-family: 'Inter', sans-serif; min-height: 100vh; }
+
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.5rem; border-bottom: 1px solid var(--card-border);
+    background: var(--court-mid); position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; color: var(--white); }
+  .nav-logo span { color: var(--orange); }
+  .nav-game-badge { background: rgba(255,92,0,0.15); border: 1px solid rgba(255,92,0,0.3); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 600; color: var(--orange-light); }
+
+  .hero { text-align: center; padding: 2rem 1rem 1.5rem; background: linear-gradient(180deg, var(--court-mid) 0%, var(--court) 100%); }
+  .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.5rem; }
+  .hero-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(40px, 9vw, 64px); font-weight: 900; text-transform: uppercase; line-height: 1; letter-spacing: 2px; margin-bottom: 0.5rem; }
+  .hero-title .accent { color: var(--orange); }
+  .hero-sub { font-size: 14px; color: var(--muted); }
+
+  .stat-band { background: var(--orange); padding: 0.75rem 1.5rem; display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+  .band-item { text-align: center; }
+  .band-num { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 900; color: var(--white); line-height: 1; }
+  .band-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.75); }
+
+  .game-wrap { max-width: 600px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+  .ad-slot { background: rgba(255,255,255,0.03); border: 1px dashed rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem; text-align: center; font-size: 11px; color: rgba(255,255,255,0.15); margin-bottom: 1rem; min-height: 90px; display: flex; align-items: center; justify-content: center; }
+
+  .quote-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem; position: relative; overflow: hidden; }
+  .quote-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); }
+  .quote-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .quote-card-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .quote-card-day { font-size: 10px; font-weight: 600; color: var(--orange); }
+  .quote-mark { font-family: 'Barlow Condensed', sans-serif; font-size: 80px; font-weight: 900; color: var(--orange); line-height: 0.5; opacity: 0.4; margin-bottom: 0.5rem; display: block; }
+  .quote-text { font-size: clamp(16px, 4vw, 22px); font-weight: 500; line-height: 1.5; color: var(--white); font-style: italic; margin-bottom: 0.75rem; }
+  .quote-context { font-size: 12px; color: var(--muted); }
+
+  .clues-section { margin-bottom: 1rem; min-height: 36px; }
+  .clues-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .clue-tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: rgba(255,92,0,0.15); border: 1px solid rgba(255,92,0,0.35); border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--orange-light); animation: fadeIn 0.3s ease; }
+  .clue-label { color: var(--muted); font-weight: 400; font-size: 11px; }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+  @keyframes slideIn { from { opacity:0; transform:translateX(-8px); } to { opacity:1; transform:none; } }
+
+  .guess-section { margin-bottom: 1rem; position: relative; }
+  .input-row { display: flex; gap: 8px; }
+  .guess-input { flex: 1; height: 48px; background: var(--card-bg); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 0 16px; font-size: 15px; color: var(--white); font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.2s; }
+  .guess-input::placeholder { color: var(--muted); }
+  .guess-input:focus { border-color: var(--orange); }
+  .guess-btn { height: 48px; padding: 0 20px; background: var(--orange); color: var(--white); border: none; border-radius: 12px; font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background 0.15s, transform 0.1s; white-space: nowrap; }
+  .guess-btn:hover { background: var(--orange-dark); }
+  .guess-btn:active { transform: scale(0.97); }
+  .autocomplete { position: absolute; top: calc(48px + 4px); left: 0; right: 0; background: #2A2A45; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; z-index: 50; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  .ac-item { padding: 11px 16px; font-size: 14px; cursor: pointer; color: var(--white); transition: background 0.1s; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .ac-item:last-child { border-bottom: none; }
+  .ac-item:hover { background: rgba(255,92,0,0.15); color: var(--orange-light); }
+  .skip-row { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+  .guesses-left { font-size: 12px; color: var(--muted); }
+  .skip-btn { font-size: 12px; color: var(--muted); background: none; border: none; cursor: pointer; text-decoration: underline; font-family: 'Inter', sans-serif; padding: 0; }
+  .skip-btn:hover { color: var(--white); }
+  .guesses-list { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+  .guess-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px; font-size: 14px; font-weight: 500; animation: slideIn 0.25s ease; }
+  .guess-row.wrong { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.25); color: #FCA5A5; }
+  .guess-row.correct { background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3); color: #86EFAC; }
+  .guess-row.skipped { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--muted); }
+  .guess-icon { font-size: 16px; flex-shrink: 0; }
+  .guess-num { margin-left: auto; font-size: 11px; opacity: 0.5; }
+
+  .result-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 1.75rem 1.5rem; text-align: center; margin-bottom: 1rem; animation: fadeIn 0.4s ease; }
+  .result-icon { font-size: 48px; margin-bottom: 0.75rem; display: block; }
+  .result-title { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.25rem; }
+  .result-title.win { color: var(--green); }
+  .result-title.loss { color: var(--red); }
+  .result-sub { font-size: 14px; color: var(--muted); margin-bottom: 1.25rem; }
+  .result-quote-reveal { background: rgba(255,92,0,0.08); border: 1px solid rgba(255,92,0,0.2); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; text-align: left; }
+  .result-quote-text { font-size: 16px; font-style: italic; color: var(--white); line-height: 1.6; margin-bottom: 0.75rem; }
+  .result-speaker { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; color: var(--orange-light); letter-spacing: 1px; }
+  .result-context { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .result-blocks { font-size: 28px; letter-spacing: 4px; margin-bottom: 1.25rem; }
+  .share-btn { width: 100%; height: 48px; background: var(--orange); color: var(--white); border: none; border-radius: 12px; font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; margin-bottom: 8px; transition: background 0.15s; }
+  .share-btn:hover { background: var(--orange-dark); }
+  .copy-confirm { font-size: 12px; color: var(--green); height: 16px; text-align: center; }
+  .result-stats { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--card-border); }
+  .rs-item { text-align: center; }
+  .rs-num { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 900; color: var(--white); }
+  .rs-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+  .back-link { display: block; text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--card-border); font-size: 13px; color: var(--muted); text-decoration: none; }
+  .back-link:hover { color: var(--orange-light); }
+  .back-link span { color: var(--orange); }
+
+  .site-footer { text-align: center; padding: 2rem 1rem; font-size: 12px; color: rgba(255,255,255,0.2); border-top: 1px solid var(--card-border); }
+  .site-footer a { color: var(--orange); text-decoration: none; }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/">NBA<span>Game</span>Stat</a>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <div class="nav-game-badge">🎤 On The Record</div>
+    <button onclick="openSidebar()" aria-label="Open menu" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px;">
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+      <span style="display:block;width:24px;height:2px;background:#fff;border-radius:2px;"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- SIDEBAR -->
+<div style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:300;opacity:0;pointer-events:none;transition:opacity 0.3s;" id="sidebar-overlay" onclick="closeSidebar()"></div>
+<div style="position:fixed;top:0;right:-320px;width:300px;height:100vh;background:#16213E;z-index:400;transition:right 0.3s ease;overflow-y:auto;border-left:1px solid rgba(255,255,255,0.08);" id="sidebar">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:900;text-transform:uppercase;color:#FF5C00;">Games</div>
+    <button onclick="closeSidebar()" style="background:none;border:none;color:#9A9AAF;font-size:22px;cursor:pointer;">✕</button>
+  </div>
+  <div style="padding:1.25rem 1.5rem;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#9A9AAF;margin-bottom:0.75rem;">Live Now</div>
+    <a href="/statline.html" style="display:flex;align-items:center;gap:12px;padding:0.875rem;border-radius:12px;text-decoration:none;margin-bottom:6px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.background='rgba(255,92,0,0.08)'" onmouseout="this.style.background=''">
+      <span style="font-size:22px;">📊</span>
+      <div><div style="font-size:14px;font-weight:600;color:#fff;">Stat Line</div><div style="font-size:12px;color:#9A9AAF;">Guess the player from the numbers</div></div>
+    </a>
+    <a href="/ontherecord.html" style="display:flex;align-items:center;gap:12px;padding:0.875rem;border-radius:12px;text-decoration:none;margin-bottom:6px;background:rgba(255,92,0,0.12);border:1px solid rgba(255,92,0,0.3);">
+      <span style="font-size:22px;">🎤</span>
+      <div><div style="font-size:14px;font-weight:600;color:#FF8040;">On The Record</div><div style="font-size:12px;color:#9A9AAF;">Guess who said the wildest quote</div></div>
+    </a>
+    <div style="height:1px;background:rgba(255,255,255,0.08);margin:0.75rem 0;"></div>
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#9A9AAF;margin-bottom:0.75rem;">Coming Soon</div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0.875rem;border-radius:12px;margin-bottom:6px;opacity:0.5;">
+      <span style="font-size:22px;">🏀</span>
+      <div><div style="font-size:14px;font-weight:600;color:#9A9AAF;">Draft Order</div><div style="font-size:12px;color:#9A9AAF;">Sort players by draft position</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:0.875rem;border-radius:12px;opacity:0.5;">
+      <span style="font-size:22px;">🔄</span>
+      <div><div style="font-size:14px;font-weight:600;color:#9A9AAF;">Trade Chain</div><div style="font-size:12px;color:#9A9AAF;">Connect players through trades</div></div>
+    </div>
+    <div style="height:1px;background:rgba(255,255,255,0.08);margin:0.75rem 0;"></div>
+    <a href="/" style="display:flex;align-items:center;gap:12px;padding:0.875rem;border-radius:12px;text-decoration:none;" onmouseover="this.style.background='rgba(255,92,0,0.08)'" onmouseout="this.style.background=''">
+      <span style="font-size:22px;">🏠</span>
+      <div><div style="font-size:14px;font-weight:600;color:#fff;">Game Hub</div><div style="font-size:12px;color:#9A9AAF;">See all games</div></div>
+    </a>
+    <a href="/about.html" style="display:flex;align-items:center;gap:12px;padding:0.875rem;border-radius:12px;text-decoration:none;" onmouseover="this.style.background='rgba(255,92,0,0.08)'" onmouseout="this.style.background=''">
+      <span style="font-size:22px;">ℹ️</span>
+      <div><div style="font-size:14px;font-weight:600;color:#fff;">About</div><div style="font-size:12px;color:#9A9AAF;">The story behind NBAGameStat</div></div>
+    </a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Daily NBA Quote Challenge</div>
+  <h1 class="hero-title">On The<br><span class="accent">Record</span></h1>
+  <p class="hero-sub" id="hero-sub">They will never live this one down</p>
+</div>
+
+<div class="stat-band">
+  <div class="band-item"><div class="band-num" id="band-streak">0</div><div class="band-label">Streak</div></div>
+  <div class="band-item"><div class="band-num" id="band-played">0</div><div class="band-label">Played</div></div>
+  <div class="band-item"><div class="band-num" id="band-wins">0</div><div class="band-label">Wins</div></div>
+  <div class="band-item"><div class="band-num" id="band-pct">0%</div><div class="band-label">Win Rate</div></div>
+</div>
+
+<div class="game-wrap">
+  <div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5347179312151361" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+  <div class="quote-card">
+    <div class="quote-card-header">
+      <div class="quote-card-label">Who said this?</div>
+      <div class="quote-card-day" id="puzzle-day">Day #1</div>
+    </div>
+    <span class="quote-mark">"</span>
+    <div class="quote-text" id="quote-text">Loading today's quote...</div>
+    <div class="quote-context" id="quote-context"></div>
+  </div>
+
+  <div class="clues-section"><div class="clues-row" id="clues-row"></div></div>
+
+  <div class="guess-section" id="guess-section">
+    <div class="input-row">
+      <input type="text" class="guess-input" id="guess-input" placeholder="Type a player name..." autocomplete="off" />
+      <button class="guess-btn" id="guess-btn">Guess</button>
+    </div>
+    <div class="autocomplete" id="autocomplete" style="display:none"></div>
+    <div class="guesses-list" id="guesses-list"></div>
+    <div class="skip-row">
+      <span class="guesses-left" id="guesses-left">5 guesses remaining</span>
+      <button class="skip-btn" id="skip-btn">Skip this guess</button>
+    </div>
+  </div>
+
+  <div id="result-area" style="display:none"></div>
+
+  <div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5347179312151361" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+  <a class="back-link" href="/">← Back to <span>NBAGameStat</span> — play the stat line game</a>
+</div>
+
+<footer class="site-footer">
+  <p>NBAGameStat &copy; 2026 &nbsp;·&nbsp; <a href="mailto:hello@nbagamestat.com">hello@nbagamestat.com</a> &nbsp;·&nbsp; New quote every day at midnight</p>
+</footer>
+
+<script>
+const QUOTES_GIST = 'https://gist.githubusercontent.com/bdearborn222/f2264ee6d66746df357db270d5602033/raw/Quotes';
+
+const FALLBACK_QUOTES = [
+  {speaker:"Shaquille O'Neal",quote:"Our offense is like the Pythagorean theorem: There is no answer!",context:"Explaining the Orlando Magic's offense",era:"1990s",team:"Orlando Magic"},
+  {speaker:"Allen Iverson",quote:"We're talking about practice. Not a game. We're talking about practice, man.",context:"Infamous 2002 press conference",era:"2000s",team:"Philadelphia 76ers"},
+  {speaker:"Jason Kidd",quote:"We're going to turn this team around 360 degrees.",context:"Press conference after being traded",era:"2000s",team:"New Jersey Nets"},
+  {speaker:"Rasheed Wallace",quote:"Both teams played hard. My man.",context:"Said in response to every question at a press conference",era:"2000s",team:"Portland Trail Blazers"},
+  {speaker:"Kevin Garnett",quote:"If I was a Caesar salad, the croutons would be my friends, the lettuce would be my family and the dressing would be my mom.",context:"Asked about his teammates",era:"2000s",team:"Minnesota Timberwolves"},
+  {speaker:"Drew Gooden",quote:"I've had to overcome a lot of diversity.",context:"Reflecting on challenges in his career",era:"2000s",team:"Cleveland Cavaliers"},
+  {speaker:"Charles Shackleford",quote:"Left hand, right hand, it doesn't matter. I'm amphibious.",context:"Interview on his ball-handling",era:"1980s",team:"New Jersey Nets"},
+];
+
+// Sidebar functions
+function openSidebar(){
+  document.getElementById('sidebar').style.right='0';
+  document.getElementById('sidebar-overlay').style.opacity='1';
+  document.getElementById('sidebar-overlay').style.pointerEvents='all';
+  document.body.style.overflow='hidden';
+}
+function closeSidebar(){
+  document.getElementById('sidebar').style.right='-320px';
+  document.getElementById('sidebar-overlay').style.opacity='0';
+  document.getElementById('sidebar-overlay').style.pointerEvents='none';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSidebar();});
+
+let QUOTES = FALLBACK_QUOTES;
+const ALL_PLAYERS_FALLBACK = [...new Set(FALLBACK_QUOTES.map(q=>q.speaker))].sort();
+
+const CLUE_ORDER = [
+  {key:"era",label:"Era"},
+  {key:"team",label:"Team"},
+  {key:"initial",label:"First initial",fn:q=>q.speaker.charAt(0)+'.'},
+];
+
+let ALL_PLAYERS = ALL_PLAYERS_FALLBACK;
+let guesses=[],gameOver=false,cluesRevealed=0;
+let puzzle=null;
+
+function getDayIndex(arr){const e=new Date('2025-06-01').getTime();const d=Math.floor((Date.now()-e)/86400000);return((d%arr.length)+arr.length)%arr.length;}
+
+// Show loading dots while fetching
+document.getElementById('quote-text').textContent='Loading today's quote...';
+
+fetch(QUOTES_GIST+'?t='+Date.now())
+  .then(r=>r.json())
+  .then(data=>{
+    if(Array.isArray(data)&&data.length>0){
+      QUOTES=data;
+      ALL_PLAYERS=[...new Set(QUOTES.map(q=>q.speaker))].sort();
+    }
+    initGame();
+  })
+  .catch(()=>{ initGame(); });
+
+function initGame(){
+  puzzle=QUOTES[getDayIndex(QUOTES)];
+  renderStats();renderPuzzle();setupInput();
+}
+
+// Dummy placeholder so old code doesn't break before initGame runs
+
+
+const SUBHEADINGS = [
+  "They will never live this one down",
+  "Someone actually said this out loud",
+  "This was said in front of cameras",
+  "We have the receipts",
+  "No context needed",
+  "Someone's publicist quit after this",
+  "This press conference went sideways",
+  "Unfiltered. Unhinged. Unforgettable.",
+  "The mic was definitely on",
+  "They meant every word"
+];
+
+const CLUE_ORDER = [
+  {key:"era", label:"Era"},
+  {key:"team", label:"Team"},
+  {key:"initial", label:"First initial", fn: q => q.speaker.charAt(0) + '.'},
+];
+
+const ALL_PLAYERS = [...new Set(QUOTES.map(q => q.speaker))].sort();
+
+let guesses = [], gameOver = false, cluesRevealed = 0;
+let puzzle = null;
+
+
+
+function loadStats() {
+  try { return JSON.parse(localStorage.getItem('otr_v1') || '{}'); } catch(e) { return {}; }
+}
+function saveStats(won) {
+  let s = loadStats();
+  s.played = (s.played||0)+1;
+  if(won) { s.wins=(s.wins||0)+1; s.streak=(s.streak||0)+1; s.best=Math.max(s.best||0,s.streak); }
+  else { s.streak=0; }
+  try { localStorage.setItem('otr_v1', JSON.stringify(s)); } catch(e) {}
+  return s;
+}
+function renderStats() {
+  const s = loadStats();
+  document.getElementById('band-streak').textContent = s.streak||0;
+  document.getElementById('band-played').textContent = s.played||0;
+  document.getElementById('band-wins').textContent = s.wins||0;
+  document.getElementById('band-pct').textContent = s.played ? Math.round((s.wins||0)/s.played*100)+'%' : '0%';
+}
+function renderPuzzle() {
+  const day = getDayIndex();
+  document.getElementById('puzzle-day').textContent = 'Day #'+(day+1);
+  document.getElementById('quote-text').textContent = puzzle.quote;
+  document.getElementById('quote-context').textContent = puzzle.context;
+  const sub = SUBHEADINGS[day % SUBHEADINGS.length];
+  document.getElementById('hero-sub').textContent = sub;
+}
+function renderClues() {
+  const row = document.getElementById('clues-row');
+  row.innerHTML = '';
+  for(let i=0;i<cluesRevealed;i++) {
+    const c = CLUE_ORDER[i];
+    const val = c.fn ? c.fn(puzzle) : puzzle[c.key];
+    const tag = document.createElement('div');
+    tag.className = 'clue-tag';
+    tag.innerHTML = `<span class="clue-label">${c.label}:</span> ${val}`;
+    row.appendChild(tag);
+  }
+}
+function renderGuesses() {
+  const list = document.getElementById('guesses-list');
+  list.innerHTML = '';
+  guesses.forEach((g,i) => {
+    const isCorrect = g.toLowerCase() === puzzle.speaker.toLowerCase();
+    const isSkip = g === '—';
+    const row = document.createElement('div');
+    row.className = 'guess-row '+(isCorrect?'correct':isSkip?'skipped':'wrong');
+    row.innerHTML = `<span class="guess-icon">${isCorrect?'✓':isSkip?'–':'✗'}</span><span>${isSkip?'Skipped':g}</span><span class="guess-num">${i+1}/5</span>`;
+    list.appendChild(row);
+  });
+  const rem = 5-guesses.length;
+  document.getElementById('guesses-left').textContent = rem===1?'1 guess remaining':rem+' guesses remaining';
+}
+function showResult(won) {
+  gameOver = true;
+  const stats = saveStats(won);
+  renderStats();
+  document.getElementById('guess-section').style.display = 'none';
+  const area = document.getElementById('result-area');
+  area.style.display = 'block';
+  const guessCount = guesses.filter(g=>g!=='—').length;
+  const blocks = guesses.map(g=>g==='—'?'⬜':g.toLowerCase()===puzzle.speaker.toLowerCase()?'🟩':'🟥').join('');
+  const shareText = `NBAGameStat: On The Record #${getDayIndex()+1}\n${won?guessCount+'/5':'X/5'} ${blocks}\n🎤 nbagamestat.com/ontherecord.html`;
+  area.innerHTML = `
+    <div class="result-card">
+      <span class="result-icon">${won?'🎤':'😤'}</span>
+      <div class="result-title ${won?'win':'loss'}">${won?'You knew!':'Next time'}</div>
+      <div class="result-sub">${won?'Identified in '+guessCount+' guess'+(guessCount!==1?'es':''):'Better luck tomorrow'}</div>
+      <div class="result-blocks">${blocks}</div>
+      <div class="result-quote-reveal">
+        <div class="result-quote-text">"${puzzle.quote}"</div>
+        <div class="result-speaker">— ${puzzle.speaker}</div>
+        <div class="result-context">${puzzle.context}</div>
+      </div>
+      <button class="share-btn" id="share-btn">Share result</button>
+      <div class="copy-confirm" id="copy-confirm"></div>
+      <div class="result-stats">
+        <div class="rs-item"><div class="rs-num">${stats.streak||0}</div><div class="rs-label">Streak</div></div>
+        <div class="rs-item"><div class="rs-num">${stats.best||0}</div><div class="rs-label">Best</div></div>
+        <div class="rs-item"><div class="rs-num">${stats.played||0}</div><div class="rs-label">Played</div></div>
+        <div class="rs-item"><div class="rs-num">${stats.played?Math.round((stats.wins||0)/stats.played*100):0}%</div><div class="rs-label">Win rate</div></div>
+      </div>
+    </div>`;
+  document.getElementById('share-btn').onclick = () => {
+    navigator.clipboard.writeText(shareText).then(() => {
+      const c = document.getElementById('copy-confirm');
+      c.textContent = 'Copied to clipboard!';
+      setTimeout(()=>{c.textContent='';},2000);
+    });
+  };
+}
+function submitGuess(name) {
+  if(gameOver||guesses.length>=5||!name.trim()) return;
+  const isCorrect = name.toLowerCase()===puzzle.speaker.toLowerCase();
+  guesses.push(name);
+  if(!isCorrect&&cluesRevealed<CLUE_ORDER.length) cluesRevealed++;
+  renderClues(); renderGuesses();
+  document.getElementById('guess-input').value='';
+  document.getElementById('autocomplete').style.display='none';
+  if(isCorrect) showResult(true);
+  else if(guesses.length>=5) showResult(false);
+}
+function skipGuess() {
+  if(gameOver||guesses.length>=5) return;
+  guesses.push('—');
+  if(cluesRevealed<CLUE_ORDER.length) cluesRevealed++;
+  renderClues(); renderGuesses();
+  if(guesses.length>=5) showResult(false);
+}
+
+function setupInput(){
+  const input=document.getElementById('guess-input');
+  const ac=document.getElementById('autocomplete');
+  input.addEventListener('input',()=>{
+    const q=input.value.trim().toLowerCase();
+    if(q.length<2){ac.style.display='none';return;}
+    const matches=ALL_PLAYERS.filter(p=>p.toLowerCase().includes(q)).slice(0,7);
+    if(matches.length){
+      ac.style.display='block';ac.innerHTML='';
+      matches.forEach(m=>{
+        const item=document.createElement('div');
+        item.className='ac-item';item.textContent=m;
+        item.onmousedown=e=>{e.preventDefault();input.value=m;ac.style.display='none';};
+        ac.appendChild(item);
+      });
+    } else{ac.style.display='none';}
+  });
+  input.addEventListener('keydown',e=>{if(e.key==='Enter')submitGuess(input.value.trim());});
+  document.getElementById('guess-btn').onclick=()=>submitGuess(input.value.trim());
+  document.getElementById('skip-btn').onclick=skipGuess;
+  document.addEventListener('click',e=>{if(!ac.contains(e.target)&&e.target!==input)ac.style.display='none';});
+}
+</script>
+</body>
+</html>
