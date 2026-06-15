@@ -412,7 +412,7 @@ const FALLBACK_QUOTES = [
 
 function getDayIndex(arr){ const e=new Date('2025-06-01').getTime(); const d=Math.floor((Date.now()-e)/86400000); return((d%arr.length)+arr.length)%arr.length; }
 
-fetch(QUOTES_GIST+'?t='+Date.now())
+fetch(QUOTES_GIST, {cache: 'no-store'})
   .then(r=>r.json())
   .then(data=>{
     if(Array.isArray(data)&&data.length>0){

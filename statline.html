@@ -553,7 +553,7 @@ document.getElementById('s-blk').textContent = '...';
 document.getElementById('s-fg').textContent = '...';
 
 // Fetch puzzles from Gist
-fetch(GIST_URL + '?t=' + Date.now())
+fetch(GIST_URL, {cache: 'no-store'})
   .then(r => r.json())
   .then(data => {
     if(Array.isArray(data) && data.length > 0) {
