@@ -7,8 +7,8 @@
 <meta name='impact-site-verification' value='719e354c-4d62-4523-96b1-1c4b77780635'>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>On The Record — NBAGameStat</title>
-<meta name="description" content="Guess who said the most unhinged thing in NBA history. A daily quote game from NBAGameStat.">
+<title>On The Record — WhatTheHoop</title>
+<meta name="description" content="Guess who said the most unhinged thing in basketball history. A daily quote game from WhatTheHoop.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -141,7 +141,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 <body>
 
 <nav>
-  <a class="nav-logo" href="/"><span>NBA</span>GameStat</a>
+  <a class="nav-logo" href="/">What<span>The</span>Hoop</a>
   <div class="nav-right">
     <div class="nav-badge">🎤 On The Record</div>
     <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
@@ -187,13 +187,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
     </a>
     <a class="sb-item" href="/about.html">
       <div class="sb-icon">ℹ️</div>
-      <div><div class="sb-name">About</div><div class="sb-desc">The story behind NBAGameStat</div></div>
+      <div><div class="sb-name">About</div><div class="sb-desc">The story behind WhatTheHoop</div></div>
     </a>
   </div>
 </div>
 
 <div class="hero">
-  <div class="hero-eyebrow">Daily NBA Quote Challenge</div>
+  <div class="hero-eyebrow">Daily Quote Challenge</div>
   <h1 class="hero-title">On The <span class="accent">Record</span></h1>
   <p class="hero-sub" id="hero-sub">They will never live this one down</p>
 </div>
@@ -243,11 +243,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
 
-  <a class="back-link" href="/">← Back to <span>NBAGameStat</span></a>
+  <a class="back-link" href="/">← Back to <span>WhatTheHoop</span></a>
 </div>
 
 <footer class="site-footer">
-  <p>NBAGameStat © 2026 · <a href="mailto:hello@nbagamestat.com">hello@nbagamestat.com</a> · New quote every day at midnight</p>
+  <p>WhatTheHoop © 2026 · <a href="mailto:hello@whatthehoop.com">hello@whatthehoop.com</a> · New quote every day at midnight</p>
 </footer>
 
 <script>
@@ -384,7 +384,7 @@ function showResult(won) {
     if(g==='—') return '⬜';
     return g.toLowerCase()===puzzle.speaker.toLowerCase() ? '🟩' : '🟥';
   }).join('');
-  var shareText = 'NBAGameStat: On The Record #'+(getDayIndex(QUOTES)+1)+'\n'+(won?guessCount+'/5':'X/5')+' '+blocks+'\n🎤 nbagamestat.com/ontherecord.html';
+  var shareText = 'WhatTheHoop: On The Record #'+(getDayIndex(QUOTES)+1)+'\n'+(won?guessCount+'/5':'X/5')+' '+blocks+'\n🎤 whatthehoop.com/ontherecord.html';
   area.innerHTML =
     '<div class="result-card">'+
     '<span class="result-icon">'+(won?'🎤':'😤')+'</span>'+

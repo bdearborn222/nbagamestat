@@ -14,10 +14,10 @@
 <meta name='impact-site-verification' value='719e354c-4d62-4523-96b1-1c4b77780635'>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NBAGameStat — Guess the Stat Line</title>
-<meta name="description" content="A daily NBA trivia game. Guess the player from their real stat line. New puzzle every day.">
-<meta property="og:title" content="NBAGameStat — Guess the Stat Line">
-<meta property="og:description" content="Can you identify the NBA player from their stat line? New puzzle every day.">
+<title>WhatTheHoop — Guess the Stat Line</title>
+<meta name="description" content="A daily basketball trivia game. Guess the player from their real stat line. New puzzle every day.">
+<meta property="og:title" content="WhatTheHoop — Guess the Stat Line">
+<meta property="og:description" content="Can you identify the player from their stat line? New puzzle every day.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -160,7 +160,7 @@
 </head>
 <body>
 <nav>
-  <a class="nav-logo" href="/" style="text-decoration:none;color:var(--white);">NBA<span>Game</span>Stat</a>
+  <a class="nav-logo" href="/" style="text-decoration:none;color:var(--white);">What<span>The</span>Hoop</a>
   <div style="display:flex;align-items:center;gap:12px;">
     <div class="nav-streak">🔥 <span id="nav-streak">0</span> streak</div>
     <button onclick="openSidebar()" aria-label="Open menu" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px;">
@@ -205,13 +205,13 @@
     </a>
     <a href="/about.html" style="display:flex;align-items:center;gap:12px;padding:0.875rem;border-radius:12px;text-decoration:none;" onmouseover="this.style.background='rgba(255,92,0,0.08)'" onmouseout="this.style.background=''">
       <span style="font-size:22px;">ℹ️</span>
-      <div><div style="font-size:14px;font-weight:600;color:#fff;">About</div><div style="font-size:12px;color:#9A9AAF;">The story behind NBAGameStat</div></div>
+      <div><div style="font-size:14px;font-weight:600;color:#fff;">About</div><div style="font-size:12px;color:#9A9AAF;">The story behind WhatTheHoop</div></div>
     </a>
   </div>
 </div>
 <div class="hero">
   <div class="hero-logo">
-    <svg viewBox="0 0 200 200" width="64" height="64" role="img" aria-label="NBAGameStat logo">
+    <svg viewBox="0 0 200 200" width="64" height="64" role="img" aria-label="WhatTheHoop logo">
       <rect width="200" height="200" fill="#1A1A2E" rx="18"/>
       <circle cx="100" cy="88" r="52" fill="#FF5C00"/>
       <line x1="100" y1="36" x2="100" y2="140" stroke="#1A1A2E" stroke-width="3"/>
@@ -224,7 +224,7 @@
       <text x="100" y="182" font-family="Arial Black,sans-serif" font-size="16" font-weight="900" fill="#FF5C00" text-anchor="middle">GAMESTAT</text>
     </svg>
   </div>
-  <div class="hero-eyebrow">Daily NBA Challenge</div>
+  <div class="hero-eyebrow">Daily Basketball Challenge</div>
   <h1 class="hero-title">NBA<span class="accent">Game</span>Stat</h1>
   <p class="hero-sub" id="hero-tagline">Who Had This Game?</p>
   <button class="how-to-btn" onclick="openHowTo()">How to Play</button>
@@ -236,7 +236,7 @@
     <button class="popup-close" onclick="closeHowTo()">✕</button>
     <div class="popup-title">How to Play</div>
     <div class="popup-steps">
-      <div class="popup-step"><div class="popup-num">1</div><div class="popup-text">A real NBA game stat line is shown — PTS, REB, AST, STL, BLK, and FG%</div></div>
+      <div class="popup-step"><div class="popup-num">1</div><div class="popup-text">A real basketball stat line is shown — PTS, REB, AST, STL, BLK, and FG%</div></div>
       <div class="popup-step"><div class="popup-num">2</div><div class="popup-text">Type a player name and guess who put up those numbers</div></div>
       <div class="popup-step"><div class="popup-num">3</div><div class="popup-text">Wrong guess? A new clue is revealed — position, team, era, then season</div></div>
       <div class="popup-step"><div class="popup-num">4</div><div class="popup-text">You have 5 guesses. Get it right and share your result!</div></div>
@@ -321,7 +321,7 @@
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
   <div class="games-footer">
-    <div class="games-label">More games on NBAGameStat</div>
+    <div class="games-label">More games on WhatTheHoop</div>
     <div class="games-grid">
       <div class="game-tile active"><div class="game-tile-icon">📊</div><div class="game-tile-name">Stat Line</div><div class="game-tile-status">Playing now</div></div>
       <a class="game-tile" href="/ontherecord.html" style="text-decoration:none"><div class="game-tile-icon">🎤</div><div class="game-tile-name">On The Record</div><div class="game-tile-status">Play now →</div></a>
@@ -333,13 +333,13 @@
   <div class="feedback-section">
     <button class="feedback-toggle" id="feedback-toggle" onclick="toggleFeedback()">💬 Feedback / Suggest a Player</button>
     <div class="feedback-form" id="feedback-form" style="display:none">
-      <iframe data-tally-src="https://tally.so/embed/44GAyo?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="NBAGameStat Feedback"></iframe>
+      <iframe data-tally-src="https://tally.so/embed/44GAyo?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="WhatTheHoop Feedback"></iframe>
       <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
     </div>
   </div>
 </div>
 <footer class="site-footer">
-  <p>NBAGameStat &copy; 2026 &nbsp;·&nbsp; <a href="mailto:hello@nbagamestat.com">hello@nbagamestat.com</a> &nbsp;·&nbsp; New puzzle every day at midnight</p>
+  <p>WhatTheHoop &copy; 2026 &nbsp;·&nbsp; <a href="mailto:hello@whatthehoop.com">hello@whatthehoop.com</a> &nbsp;·&nbsp; New puzzle every day at midnight</p>
 </footer>
 <script>
 const GIST_URL = 'https://gist.githubusercontent.com/bdearborn222/e1c4691e210777c935648cbfd2a734b7/raw/puzzles.json';
@@ -457,7 +457,7 @@ function showResult(won) {
   area.style.display = 'block';
   const guessCount = guesses.filter(g => g !== '—').length;
   const blocks = guesses.map(g => g === '—' ? '⬜' : g.toLowerCase() === puzzle.player.toLowerCase() ? '🟩' : '🟥').join('');
-  const shareText = `NBAGameStat — Stat Line #${getDayIndex(PUZZLES)+1}\n${won ? guessCount+'/5' : 'X/5'} ${blocks}\n🏀 nbagamestat.com`;
+  const shareText = `WhatTheHoop — Stat Line #${getDayIndex(PUZZLES)+1}\n${won ? guessCount+'/5' : 'X/5'} ${blocks}\n🏀 whatthehoop.com`;
   const playerSearch = encodeURIComponent(puzzle.player + ' NBA jersey');
   const amazonLink = `https://www.amazon.com/s?k=${playerSearch}&tag=nbagamestat-20`;
   area.innerHTML = `

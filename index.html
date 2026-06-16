@@ -7,8 +7,8 @@
 <meta name='impact-site-verification' value='719e354c-4d62-4523-96b1-1c4b77780635'>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NBAGameStat — Daily NBA Games</title>
-<meta name="description" content="The ultimate daily NBA game platform. Guess stat lines, identify quotes, and more. New challenges every day.">
+<title>WhatTheHoop — Daily Basketball Games</title>
+<meta name="description" content="The ultimate daily basketball game platform. Guess stat lines, identify quotes, and more. New challenges every day.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -133,7 +133,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="/">NBA<span>Game</span>Stat</a>
+  <a class="nav-logo" href="/">What<span>The</span>Hoop</a>
   <button class="nav-hamburger" onclick="openSidebar()" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -184,18 +184,18 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
   <div class="sidebar-divider"></div>
   <div class="sidebar-section">
     <div class="sidebar-section-label">Links</div>
-    <a class="sidebar-game" href="mailto:hello@nbagamestat.com">
+    <a class="sidebar-game" href="mailto:hello@whatthehoop.com">
       <div class="sidebar-game-icon">✉️</div>
       <div class="sidebar-game-info">
         <div class="sidebar-game-name">Contact</div>
-        <div class="sidebar-game-desc">hello@nbagamestat.com</div>
+        <div class="sidebar-game-desc">hello@whatthehoop.com</div>
       </div>
     </a>
     <a class="sidebar-game" href="/about.html">
       <div class="sidebar-game-icon">ℹ️</div>
       <div class="sidebar-game-info">
         <div class="sidebar-game-name">About</div>
-        <div class="sidebar-game-desc">The story behind NBAGameStat</div>
+        <div class="sidebar-game-desc">The story behind WhatTheHoop</div>
       </div>
     </a>
   </div>
@@ -208,7 +208,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
     <div class="hero-ball hero-ball-2"></div>
   </div>
   <div class="hero-logo-wrap">
-    <svg viewBox="0 0 200 200" width="72" height="72" role="img" aria-label="NBAGameStat logo">
+    <svg viewBox="0 0 200 200" width="72" height="72" role="img" aria-label="WhatTheHoop logo">
       <rect width="200" height="200" fill="#1A1A2E" rx="18"/>
       <circle cx="100" cy="88" r="52" fill="#FF5C00"/>
       <line x1="100" y1="36" x2="100" y2="140" stroke="#1A1A2E" stroke-width="3"/>
@@ -221,7 +221,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
       <text x="100" y="182" font-family="Arial Black,sans-serif" font-size="16" font-weight="900" fill="#FF5C00" text-anchor="middle">GAMESTAT</text>
     </svg>
   </div>
-  <div class="hero-eyebrow">The Daily NBA Game Platform</div>
+  <div class="hero-eyebrow">The Daily Basketball Game Platform</div>
   <h1 class="hero-title">Pick Your<br><span class="accent">Game</span></h1>
   <p class="hero-sub">Two games live. New challenges every day. New games dropping soon.</p>
   <div class="hero-stats">
@@ -256,12 +256,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
         </div>
         <div class="streak-badge" id="statline-streak">🔥 0 streak</div>
       </div>
-      <div class="game-card-desc">A real NBA game stat line is shown. Figure out which legend put up those numbers. 5 guesses. New puzzle every day at midnight.</div>
+      <div class="game-card-desc">A real basketball stat line is shown. Figure out which legend put up those numbers. 5 guesses. New puzzle every day at midnight.</div>
       <div class="game-card-how">
         <button class="how-toggle" onclick="toggleHow('statline-how', this)">▸ How to play</button>
         <div class="how-steps hidden" id="statline-how">
           <div class="how-step"><div class="how-num">1</div><div class="how-text">Study the stat line — PTS, REB, AST, STL, BLK, and FG%</div></div>
-          <div class="how-step"><div class="how-num">2</div><div class="how-text">Type any NBA player's name and make your guess</div></div>
+          <div class="how-step"><div class="how-num">2</div><div class="how-text">Type any basketball player's name and make your guess</div></div>
           <div class="how-step"><div class="how-num">3</div><div class="how-text">Wrong? A clue drops — position, then team, then era, then season</div></div>
           <div class="how-step"><div class="how-num">4</div><div class="how-text">Get it in 5 or fewer guesses and share your result</div></div>
         </div>
@@ -289,12 +289,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
         </div>
         <div class="streak-badge" id="otr-streak">🔥 0 streak</div>
       </div>
-      <div class="game-card-desc">The most unhinged, ridiculous, legendary things ever said in NBA history. Guess who said it. 5 guesses. Someone's publicist quit after this.</div>
+      <div class="game-card-desc">The most unhinged, ridiculous, legendary things ever said in basketball history. Guess who said it. 5 guesses. Someone's publicist quit after this.</div>
       <div class="game-card-how">
         <button class="how-toggle" onclick="toggleHow('otr-how', this)">▸ How to play</button>
         <div class="how-steps hidden" id="otr-how">
           <div class="how-step"><div class="how-num">1</div><div class="how-text">Read the quote — no attribution shown</div></div>
-          <div class="how-step"><div class="how-num">2</div><div class="how-text">Guess which NBA player said it</div></div>
+          <div class="how-step"><div class="how-num">2</div><div class="how-text">Guess which basketball player said it</div></div>
           <div class="how-step"><div class="how-num">3</div><div class="how-text">Wrong? A clue drops — era, then team, then first initial</div></div>
           <div class="how-step"><div class="how-num">4</div><div class="how-text">Get it right and share. Your friends will never believe these quotes are real.</div></div>
         </div>
@@ -342,7 +342,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
           <div class="game-card-name">Trade Chain</div>
         </div>
       </div>
-      <div class="game-card-desc">Connect two players through real NBA trades. Get from Kobe to LeBron in 4 trades. NBA history knowledge required.</div>
+      <div class="game-card-desc">Connect two players through real NBA trades. Get from Kobe to LeBron in 4 trades. basketball history knowledge required.</div>
       <div class="game-card-footer">
         <div class="coming-btn">Coming Soon</div>
       </div>
@@ -366,7 +366,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 </div>
 
 <footer class="site-footer">
-  <p>NBAGameStat &copy; 2026 &nbsp;·&nbsp; <a href="mailto:hello@nbagamestat.com">hello@nbagamestat.com</a> &nbsp;·&nbsp; <a href="/about.html">About</a> &nbsp;·&nbsp; New puzzles every day at midnight</p>
+  <p>WhatTheHoop &copy; 2026 &nbsp;·&nbsp; <a href="mailto:hello@whatthehoop.com">hello@whatthehoop.com</a> &nbsp;·&nbsp; <a href="/about.html">About</a> &nbsp;·&nbsp; New puzzles every day at midnight</p>
 </footer>
 
 <script>
