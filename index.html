@@ -217,8 +217,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
       <path d="M56 68 Q100 88 144 68" fill="none" stroke="#1A1A2E" stroke-width="2.5"/>
       <path d="M56 108 Q100 88 144 108" fill="none" stroke="#1A1A2E" stroke-width="2.5"/>
       <path d="M62 124 Q100 100 138 124" fill="none" stroke="#1A1A2E" stroke-width="2.5"/>
-      <text x="100" y="158" font-family="Arial Black,sans-serif" font-size="22" font-weight="900" fill="#FFFFFF" text-anchor="middle">NBA</text>
-      <text x="100" y="182" font-family="Arial Black,sans-serif" font-size="16" font-weight="900" fill="#FF5C00" text-anchor="middle">GAMESTAT</text>
+      <text x="100" y="170" font-family="Arial Black,sans-serif" font-size="32" font-weight="900" fill="#FFFFFF" text-anchor="middle">WTH</text>
     </svg>
   </div>
   <div class="hero-eyebrow">The Daily Basketball Game Platform</div>
@@ -226,7 +225,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
   <p class="hero-sub">Two games live. New challenges every day. New games dropping soon.</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-num">2</div><div class="hero-stat-label">Live Games</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">365</div><div class="hero-stat-label">Daily Puzzles</div></div>
+    <div class="hero-stat"><div class="hero-stat-num" id="countdown-timer">--:--:--</div><div class="hero-stat-label">Next Puzzle @ 12AM PT</div></div>
     <div class="hero-stat"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Bragging Rights</div></div>
   </div>
 </div>
@@ -370,6 +369,23 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1
 </footer>
 
 <script>
+// Countdown to midnight Pacific Time
+function updateCountdown() {
+  var now = new Date();
+  var pacific = new Date(now.toLocaleString('en-US', {timeZone: 'America/Los_Angeles'}));
+  var midnight = new Date(pacific);
+  midnight.setHours(24, 0, 0, 0);
+  var diff = midnight - pacific;
+  var h = Math.floor(diff / 3600000);
+  var m = Math.floor((diff % 3600000) / 60000);
+  var s = Math.floor((diff % 60000) / 1000);
+  var pad = function(n){ return n < 10 ? '0'+n : n; };
+  var el = document.getElementById('countdown-timer');
+  if(el) el.textContent = pad(h)+':'+pad(m)+':'+pad(s);
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
 function openSidebar(){
   document.getElementById('sidebar').classList.add('open');
   document.getElementById('sidebar-overlay').classList.add('open');
